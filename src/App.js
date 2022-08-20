@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-// import { useAuth } from './Context/AuthContext';
 import { AuthProvider } from './Context/AuthContext';
 
 import { Container} from 'react-bootstrap'
@@ -12,10 +11,7 @@ import PrivateRoute from './Components/Privatroute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dash from './Components/dash';
 
-
 function App(){
-
-
 
   return(
     <Container  style={{minHeight: "100vh"}}>
@@ -31,8 +27,6 @@ function App(){
             </Routes>
           </Router>
         </AuthProvider>
-        
-
       </div>
     </Container>
   );
