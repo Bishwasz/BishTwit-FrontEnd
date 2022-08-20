@@ -8,7 +8,7 @@ import { Container} from 'react-bootstrap'
 
 import Signup from './Components/signup';
 import Login from './Components/login';
-
+import PrivateRoute from './Components/Privatroute';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dash from './Components/dash';
 
@@ -23,9 +23,11 @@ function App(){
         <AuthProvider>
           <Router>
             <Routes>
-              <Route path="/" element={<Signup/>}/>
+              <Route exact path="/" element={<Signup/>}/>
               <Route path="/login" element={<Login/>} />
-              <Route path="/dash" element={<Dash/>}/>
+              <Route element={<PrivateRoute/>}>
+                <Route path='/dash' element={<Dash/>}/>
+              </Route>
             </Routes>
           </Router>
         </AuthProvider>
@@ -36,4 +38,5 @@ function App(){
   );
 }
 export default App;
+
 
